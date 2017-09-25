@@ -9,14 +9,12 @@ stop = '490005505W'
 
 # api request, made into a function for reusability
 def findtime(routes, stopID):
-    return requests.get('https://api.tfl.gov.uk/Line/{}/Arrivals/{}'.format(routes, stopID))
-
+    datump = requests.get('https://api.tfl.gov.uk/Line/{}/Arrivals/{}'.format(routes, stopID))
+    return json.loads(datump.text)
 # function that creates an array of bus IDs and time to stops, in seconds
 def makedat():
 
-    datump = findtime(route, stop)
-
-    jsonlist = json.loads(datump.text)
+    jsonlist = findtime(route, stop)
 
     busarray = []
 
@@ -28,4 +26,4 @@ def makedat():
         else:
             print(i['lineID'], ' ', int(x), ' Minutes')
 
-print(makedat())
+makedat()
