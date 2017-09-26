@@ -22,8 +22,6 @@ def makedat():
         print(i['lineId'],i['vehicleId'], i['timeToStation'])
         x = i['timeToStation'] / 60
         if x <= 1:
-            print(i['lineID'], ' Due')
+            print(i['lineId'], ' Due')
         else:
-            print(i['lineID'], ' ', int(x), ' Minutes')
-
-makedat()
+            print(i['lineId'], ' ', int(x), ' Minutes')
