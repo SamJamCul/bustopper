@@ -9,7 +9,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/buses')
-def main():
+def buses():
     bustuff = tflapi.makedat()
     route = bustuff[0][0]
     time = bustuff[0][1]
