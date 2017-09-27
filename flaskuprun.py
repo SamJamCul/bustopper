@@ -9,6 +9,7 @@ def hello_world():
 
 @app.route('/main')
 def main():
-    bustuff = tflapi.intest()
-    
-    return render_template('main.html')
+    bustuff = tflapi.makedat()
+    route = bustuff[0][0]
+    time = bustuff[0][1]
+    return render_template('main.html', time=time, route=route)
