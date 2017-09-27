@@ -14,7 +14,13 @@
 
 <body>
   <title>Here's the next bus</title>
-  <h1>The next {{ route }} is in {{ time }} minutes.</h1>
+  {% if time == 0 %}
+    <hi>The next {{ route }} is really freakin' soon!<h1>
+  {% elif time == 1 %}
+    <h1>The next {{ route }} is in a minute!</h1>
+  {% else %}
+    <h1>The next {{ route }} is in {{ time }} minutes.</h1>
+  {% endif %}
   <script src="js/scripts.js"></script>
 </body>
 </html>
