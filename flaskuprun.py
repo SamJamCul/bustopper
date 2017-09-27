@@ -8,9 +8,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/main')
+@app.route('/buses')
 def main():
     bustuff = tflapi.makedat()
     route = bustuff[0][0]
     time = bustuff[0][1]
-    return render_template('main.html', time=time, route=route)
+    return render_template('buses.html', time=time, route=route)
