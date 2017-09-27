@@ -15,12 +15,15 @@
 <body>
   <title>Here's the next bus</title>
   {% if time == 0 %}
-    <hi>The next {{ route }} is really freakin' soon!<h1>
+    <h1>The next {{ route }} is really freakin' soon!<h1>
   {% elif time == 1 %}
     <h1>The next {{ route }} is in a minute!</h1>
   {% else %}
     <h1>The next {{ route }} is in {{ time }} minutes.</h1>
   {% endif %}
+  <p><a href="{{ url_for('index') }}">You can go back to the main
+    page if you really want</a></p>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
