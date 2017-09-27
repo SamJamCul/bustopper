@@ -9,4 +9,6 @@ def hello_world():
 
 @app.route('/main')
 def main():
+    bustuff = tflapi.intest()
+    
     return render_template('main.html')
